@@ -17,15 +17,15 @@ class ApiKeyManager @Inject constructor(
     private val context: Context
 ) {
     private val masterKey = MasterKey.Builder(context, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
-        .setKeyScheme(MasterKey.KEY_SCHEME_AES256_GCM)
+        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
         .build()
 
     private val prefs: SharedPreferences = EncryptedSharedPreferences.create(
         context,
         PREFS_NAME,
         masterKey,
-        EncryptedSharedPreferences.PrefKeyEncryptionScheme.PRE_KEYSET,
-        EncryptedSharedPreferences.PrefValueEncryptionScheme.PREF_VALUE_AES256_GCM
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SKEIN,
+        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
 
     /**

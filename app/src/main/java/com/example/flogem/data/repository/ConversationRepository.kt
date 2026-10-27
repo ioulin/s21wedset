@@ -11,6 +11,7 @@ import com.example.flogem.domain.model.ChatMessage
 import com.example.flogem.domain.model.Session
 import com.example.flogem.domain.model.WidgetConfig
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.runBlocking
 import java.util.UUID
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -90,10 +91,10 @@ class ConversationRepository @Inject constructor(
         apiKeyConfig: ApiKeyConfig
     ): ChatMessage {
         // 1. 사용자 메시지 저장
-        saveMessage(userMessage)
+        runBlocking { saveMessage(userMessage) }
 
         // 2. 대화 기록 가져와서 요청 구성
-        val history = messageDao.getLatestHistory(sessionId, limit = 20)
+        val history = messageDao.getRecentMessages(sessionId, limit = 20)
         val contents = history.map { msg ->
             GeminiRequest.Content(
                 role = if (msg.role == ChatMessage.Role.USER) "user" else "model",
@@ -153,7 +154,7 @@ class ConversationRepository @Inject constructor(
         onError: (Throwable) -> Unit
     ) {
         // 1. 사용자 메시지 저장
-        saveMessage(userMessage)
+        runBlocking { saveMessage(userMessage) }
 
         // 2. 대화 기록으로부터 요청 구성
         val contents = emptyList<GeminiRequest.Content>()
@@ -190,8 +191,10 @@ class ConversationRepository @Inject constructor(
                     role = ChatMessage.Role.MODEL,
                     content = fullResponse.toString()
                 )
-                saveMessage(modelMessage)
-                updateSession(sessionId, messageDao.getMessageCount(sessionId))
+                runBlocking {
+                    saveMessage(modelMessage)
+                    updateSession(sessionId, messageDao.getMessageCount(sessionId))
+                }
                 onComplete(fullResponse.toString())
             },
             onError = { e ->

@@ -5,6 +5,7 @@ import com.example.flogem.data.model.GeminiResponse
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.http.Path
+import okhttp3.ResponseBody
 import retrofit2.http.Query
 
 /**
@@ -34,5 +35,5 @@ interface GeminiApi {
         @Query("key") apiKey: String,
         @Query("alt") alt: String = "sse",
         @Body request: GeminiRequest
-    ): retrofit2.Response<retrofit2.ResponseBody>
+    ): retrofit2.Response<ResponseBody>
 }

@@ -53,10 +53,9 @@ class TtsManager(private val context: Context) : TextToSpeech.OnInitListener {
 
         if (onComplete != null) {
             tts?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
-                override fun onSuccess(utteranceId: String?) = onComplete()
+                override fun onDone(utteranceId: String?) = onComplete()
                 override fun onError(utteranceId: String?) = onComplete()
-                override fun onStop(utteranceId: String?) = onComplete()
-            })
+                    })
         }
 
         tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId)

@@ -17,12 +17,12 @@ class TtsInitReceiver : BroadcastReceiver() {
         if (intent?.action == ACTION_INIT_TTS) {
             val tts = TextToSpeech(context) { status ->
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.language = Locale.KOREAN
                     Log.d(TAG, "TTS 엔진 초기화 성공")
                 } else {
                     Log.e(TAG, "TTS 엔진 초기화 실패")
                 }
             }
+            tts.language = Locale.KOREAN
         }
     }
 

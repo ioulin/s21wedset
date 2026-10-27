@@ -9,7 +9,8 @@ import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.sse.EventSource
 import okhttp3.sse.EventSourceListener
-import okhttp3.sse.RealEventSource
+import okhttp3.sse.EventSources
+import okhttp3.toMediaType
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -65,7 +66,7 @@ class GeminiApiClient @Inject constructor() {
         onComplete: () -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        val mediaType = okhttp3.MediaType.get("application/json; charset=UTF-8")
+        val mediaType = "application/json; charset=UTF-8".toMediaType()
         val jsonBody = gson.toJson(request)
         val requestBody = RequestBody.create(mediaType, jsonBody)
 
@@ -74,8 +75,8 @@ class GeminiApiClient @Inject constructor() {
             .post(requestBody)
             .build()
 
-        val eventSource = RealEventSource(httpRequest, object : EventSourceListener() {
-            override fun onEvent(source: EventSource, id: String?, type: String?, data: String?) {
+        val eventSource = EventSources.create(okHttpClient).newEventSource(httpRequest, object : EventSourceListener() {
+            override fun onEvent(source: EventSource, id: String?, type: String?, data: String) {
                 val eventData = data ?: return
                 if (eventData == "[DONE]") {
                     onComplete()
@@ -108,7 +109,6 @@ class GeminiApiClient @Inject constructor() {
             }
         })
 
-        eventSource.enqueue(httpRequest)
     }
 
     companion object {

@@ -87,7 +87,7 @@ class FloatingWidgetService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                     or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
                     or WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
-                    or WindowManager.LayoutParams.FLAG_IGNORE_HOT_MODE,
+                    or WindowManager.LayoutParams.FLAG_IGNORE_HOTMODE,
             PixelFormat.TRANSLUCENT
         )
 
@@ -170,7 +170,7 @@ class FloatingWidgetService : Service() {
             }
         })
 
-        if (widgetParams.isAttachedToWindow) {
+        if (floatingWidgetView.isAttachedToWindow) {
             windowManager.removeView(floatingWidgetView)
         }
         windowManager.addView(floatingWidgetView, widgetParams)

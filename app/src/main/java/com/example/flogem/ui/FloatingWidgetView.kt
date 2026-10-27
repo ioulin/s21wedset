@@ -30,7 +30,8 @@ class FloatingWidgetView @JvmOverloads constructor(
     private var baseY = 0f
 
     init {
-        binding = WidgetFloatingBinding.inflate(LayoutInflater.from(context), this, true)
+        LayoutInflater.from(context).inflate(R.layout.widget_floating, this, true)
+        binding = WidgetFloatingBinding.bind(this)
         initView()
     }
 

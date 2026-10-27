@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_size">56dp</dimen>
+    <dimen name="widget_margin">12dp</dimen>
+    <dimen name="message_bubble_radius">16dp</dimen>
+    <dimen name="message_bubble_radius_user">16dp</dimen>
+    <dimen name="message_bubble_radius_model">16dp</dimen>
+    <dimen name="message_padding">12dp</dimen>
+    <dimen name="message_margin">8dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="message_text_size">14sp</dimen>
+    <dimen name="message_time_size">10sp</dimen>
+    <dimen name="chat_padding">16dp</dimen>
+    <dimen name="popup_elevation">16dp</dimen>
+    <dimen name="typing_indicator_size">24dp</dimen>
+
+</resources>

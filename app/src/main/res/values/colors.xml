@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- FloGem 컬러 팔레트 -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- Google 컬러 -->
+    <color name="google_blue">#4285F4</color>
+    <color name="google_green">#34A853</color>
+    <color name="google_yellow">#FBBC05</color>
+    <color name="google_red">#EA4335</color>
+
+    <!-- 위젯 -->
+    <color name="widget_bg">#FFFFFF</color>
+    <color name="widget_border">#E0E0E0</color>
+
+    <!-- 채팅 -->
+    <color name="message_user_bg">#4285F4</color>
+    <color name="message_model_bg">#F1F1F1</color>
+    <color name="message_system_bg">#FFF3E0</color>
+    <color name="message_user_text">#FFFFFF</color>
+    <color name="message_model_text">#000000</color>
+    <color name="message_system_text">#FF6F00</color>
+    <color name="typing_indicator">#888888</color>
+
+    <!-- 입력 영역 -->
+    <color name="input_background">#F5F5F5</color>
+    <color name="input_border">#E0E0E0</color>
+
+    <!-- 다크 모드 -->
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_on_surface">#E0E0E0</color>
+
+    <!-- 투명/반투명 -->
+    <color name="transparent">#00000000</color>
+    <color name="dim_overlay">#60000000</color>
+
+    <!-- 앱 아이콘 (Adaptive Icon) -->
+    <color name="ic_launcher_background">#4285F4</color>
+</resources>

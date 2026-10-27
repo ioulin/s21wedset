@@ -1,0 +1,31 @@
+# Gradle
+.gradle/
+build/
+!.gradle/no-horrible.tar
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.apks
+*.so
+local.properties
+
+# Proguard
+proguard/
+
+# Captures
+captures/
+
+# IDE
+.idea/
+*.iml
+*.iws
+.vscode/
+
+# User-specific
+*.log
+
+# External builds
+.externalNativeBuild/
+.cxx/

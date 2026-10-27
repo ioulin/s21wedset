@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_gradient">
+
+    <!-- 앱 로고 + 타이틀 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_widget_logo"
+            android:contentDescription="@string/app_name_full" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name_full"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/google_blue"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+
+    <!-- 권한 상태 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="권한 상태"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333" />
+
+    <!-- 플로팅 권한 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="플로팅 (SYSTEM_ALERT_WINDOW)"
+            android:textSize="14sp"
+            android:textColor="#666666" />
+
+        <TextView
+            android:id="@+id/permissionStatusOverlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_overlay_denied"
+            android:textSize="12sp"
+            android:textColor="@color/google_red" />
+
+        <Button
+            android:id="@+id/buttonRequestOverlay"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요청"
+            android:textColor="@color/google_blue" />
+    </LinearLayout>
+
+    <!-- 오디오 권한 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="음성 인식 (RECORD_AUDIO)"
+            android:textSize="14sp"
+            android:textColor="#666666" />
+
+        <TextView
+            android:id="@+id/permissionStatusAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_audio_denied"
+            android:textSize="12sp"
+            android:textColor="@color/google_red" />
+
+        <Button
+            android:id="@+id/buttonRequestAudio"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요청"
+            android:textColor="@color/google_blue" />
+    </LinearLayout>
+
+    <!-- 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="#E0E0E0" />
+
+    <!-- 버튼 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonStartWidget"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/start_widget_button"
+            android:textColor="@color/google_blue"
+            android:strokeColor="@color/google_blue" />
+
+        <Button
+            android:id="@+id/buttonManageApiKey"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/manage_api_key_button"
+            android:textColor="@color/google_blue" />
+
+        <Button
+            android:id="@+id/buttonSettings"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_button"
+            android:textColor="@color/google_blue" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 앱 이름 -->
+    <string name="app_name">FloGem</string>
+    <string name="app_name_full">Floating Gemini</string>
+
+    <!-- 위젯 -->
+    <string name="widget_content_desc">플로팅 위젯 (탭하여 채팅 시작)</string>
+    <string name="widget_breathing_hint">숨쉴 때 애니메이션</string>
+
+    <!-- 채팅 -->
+    <string name="chat_hint">메시지를 입력하세요...</string>
+    <string name="send_button">전송</string>
+    <string name="voice_button_desc">음성 인식</string>
+    <string name="keyboard_button_desc">키보드 전환</string>
+    <string name="close_button_desc">닫기</string>
+    <string name="tts_button_desc">음성으로 듣기</string>
+    <string name="voice_mode_hint">음성 인식 중... 말씀해주세요</string>
+    <string name="empty_chat_prompt">위젯을 탭하거나 마이크를 눌러 대화를 시작하세요.</string>
+
+    <!-- 메인 액티비티 -->
+    <string name="start_widget_button">플로팅 위젯 시작</string>
+    <string name="settings_button">설정</string>
+    <string name="manage_api_key_button">API 키 관리</string>
+    <string name="permission_overlay_granted">허용됨</string>
+    <string name="permission_overlay_denied">권한 필요</string>
+    <string name="permission_audio_granted">허용됨</string>
+    <string name="permission_audio_denied">권한 필요</string>
+    <string name="request_overlay_button">권한 요청</string>
+    <string name="request_audio_button">권한 요청</string>
+
+    <!-- 설정 -->
+    <string name="settings_title">설정</string>
+    <string name="api_key_status_empty">API 키가 설정되지 않았습니다</string>
+    <string name="edit_api_key_button">수정</string>
+    <string name="change_model_button">모델 변경</string>
+    <string name="model_selection_title">사용할 모델 선택</string>
+    <string name="save_button">저장</string>
+    <string name="cancel_button">취소</string>
+    <string name="api_key_input_hint">API 키 입력</string>
+    <string name="api_key_dialog_message">https://aistudio.google.com/ 에서 API 키를 발급받아 입력하세요</string>
+
+    <!-- 에러 -->
+    <string name="error_no_api_key">API 키가 설정되지 않았습니다. 설정에서 입력해주세요.</string>
+    <string name="error_no_network">네트워크에 연결되지 않았습니다.</string>
+    <string name="error_stt_init">음성 인식을 사용할 수 없습니다</string>
+
+    <!-- 토스트 -->
+    <string name="toast_api_key_saved">API 키가 저장되었습니다</string>
+    <string name="toast_api_key_empty">API 키를 입력해주세요</string>
+    <string name="toast_widget_started">플로팅 위젯이 시작되었습니다</string>
+    <string name="toast_overlay_permission_denied">플로팅 권한이 거부되었습니다</string>
+    <string name="toast_settings_saved">설정이 저장되었습니다</string>
+</resources>

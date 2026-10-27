@@ -10,6 +10,7 @@ import okhttp3.RequestBody
 import okhttp3.sse.EventSource
 import okhttp3.sse.EventSourceListener
 import okhttp3.sse.EventSources
+import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -65,7 +66,7 @@ class GeminiApiClient @Inject constructor() {
         onComplete: () -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        val mediaType = okhttp3.MediaType.get("application/json; charset=UTF-8")
+        val mediaType = "application/json; charset=UTF-8".toMediaType()
         val jsonBody = gson.toJson(request)
         val requestBody = RequestBody.create(mediaType, jsonBody)
 

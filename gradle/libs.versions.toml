@@ -2,6 +2,7 @@
 agp = "8.7.1"
 kotlin = "2.1.0"
 hilt = "2.51.1"
+ksp = "2.1.0-1.0.29"
 room = "2.6.1"
 lifecycle = "2.8.2"
 navigation = "2.7.7"
@@ -46,3 +47,4 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

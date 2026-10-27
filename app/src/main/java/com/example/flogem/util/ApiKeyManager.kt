@@ -28,7 +28,7 @@ class ApiKeyManager @Inject constructor(
                 appContext,
                 PREFS_NAME,
                 masterKey,
-                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SKEIN,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
                 EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
             )
         } catch (e: Exception) {

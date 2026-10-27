@@ -90,7 +90,7 @@ dependencies {
     ksp("com.google.dagger:hilt-android-compiler:2.51.1")
 
     // Security (EncryptedSharedPreferences)
-    implementation("androidx.security:security-crypto:1.0.0")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")

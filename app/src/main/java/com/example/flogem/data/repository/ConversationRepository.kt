@@ -150,7 +150,7 @@ class ConversationRepository @Inject constructor(
         apiKeyConfig: ApiKeyConfig,
         onProgress: (String) -> Unit,
         onComplete: (String) -> Unit,
-        onError: (Exception) -> Unit
+        onError: (Throwable) -> Unit
     ) {
         // 1. 사용자 메시지 저장
         saveMessage(userMessage)

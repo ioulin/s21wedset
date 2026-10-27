@@ -63,7 +63,7 @@ class GeminiApiClient @Inject constructor() {
         request: GeminiRequest,
         onChunk: (String) -> Unit,
         onComplete: () -> Unit,
-        onError: (Exception) -> Unit
+        onError: (Throwable) -> Unit
     ) {
         val mediaType = okhttp3.MediaType.get("application/json; charset=UTF-8")
         val jsonBody = gson.toJson(request)

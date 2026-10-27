@@ -86,8 +86,13 @@ class FloatingWidgetView @JvmOverloads constructor(
         val fullSet = android.animation.AnimatorSet()
         fullSet.playSequentially(animatorSet, reverseSet)
         fullSet.duration = 3000
-        fullSet.repeatCount = android.animation.ValueAnimator.INFINITE
-        fullSet.repeatMode = android.animation.ValueAnimator.REVERSE
+        fullSet.addListener(object : android.animation.AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: android.animation.Animator) {
+                if (isBreathing) {
+                    animation.start()
+                }
+            }
+        })
 
         fullSet.start()
     }

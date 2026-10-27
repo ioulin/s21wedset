@@ -24,7 +24,7 @@ class ApiKeyManager @Inject constructor(
         context,
         PREFS_NAME,
         masterKey,
-        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SKEIN,
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
 

@@ -27,7 +27,7 @@ class TtsManager(private val context: Context) : TextToSpeech.OnInitListener {
         if (status == TextToSpeech.SUCCESS) {
             val result = tts?.setLanguage(Locale.KOREAN)
             if (result == TextToSpeech.LANG_MISSING_DATA ||
-                result == TextToSpeech.LANG_COUNTRY_NOT_AVAILABLE) {
+                result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e(TAG, "TTS: 한국어 언어 데이터 없음")
                 isReady = false
             } else {
@@ -53,9 +53,10 @@ class TtsManager(private val context: Context) : TextToSpeech.OnInitListener {
 
         if (onComplete != null) {
             tts?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
+                override fun onStart(utteranceId: String?) {}
                 override fun onDone(utteranceId: String?) = onComplete()
                 override fun onError(utteranceId: String?) = onComplete()
-                    })
+            })
         }
 
         tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId)
